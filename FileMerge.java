@@ -14,8 +14,8 @@ public static void main(String[] args) throws IOException {
  Configuration conf=new Configuration();
  FileSystem hdfs=FileSystem.get(conf);
  FileSystem local=FileSystem.getLocal(conf);
- Path inputDir=new Path("/home/manjulaprabhu24/Downloads/NYSE");
- Path hdfsFile=new Path("/usr/local/bin/hadoop-2.7.3/bin/sampleFile.txt");
+ Path inputDir=new Path(args[0]);
+ Path hdfsFile=new Path(args[1]);
  
  try {
 	 FileStatus[] inputFiles=local.listStatus(inputDir);
