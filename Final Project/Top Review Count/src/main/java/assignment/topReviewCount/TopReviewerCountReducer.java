@@ -16,7 +16,6 @@ public class TopReviewerCountReducer extends Reducer<NullWritable, Text, NullWri
 		int totalReviewCount = 0;
 		for (Text eachReviewCount : values) {
 			String[] fields = eachReviewCount.toString().split(",");
-			System.out.println(fields[2]);
 			totalReviewCount += Integer.parseInt(fields[2].substring(1, fields[2].length() - 1));
 
 			intermediateMap.put(totalReviewCount, new Text(eachReviewCount));
